@@ -1,0 +1,22 @@
+import os
+#Write a code that will check if a text file already exists. If it does, delete it. Otherwise, create a text file that will record a users inputs. You will need to use the write function to do this. Next I want the program to read the text file and print out its contents. Then close the text file (This can be done with the close or "with" statement).
+q = True
+while q == True: 
+  
+  ask = input ("Would you like to write(w) or delete(d) a file?\n").lower()
+  if ask == 'w':
+    workFile = open('log.txt',"a")
+    write = input('what would you like to write in the file?\n')
+    workFile.write(write)
+    workFile.close()
+    q = False
+  if ask == 'd':
+    print ('The file has been deleted.')
+    os.remove('log.txt')
+    q = False
+  # if ask == "r":
+  #   workFile = open('log.txt',"r")
+  #   contents = workFile.read()
+  #   print('This file contains '+ contents)
+  #   workFile.close()
+  #   q = False
